@@ -2,7 +2,7 @@ from statistics import mean
 from math import ceil, floor
 
 filename = 'input.txt'
-input = [int(x) for x in open(filename, 'r').readline().split(',')] #convert input into an array of integers
+input = [int(x) for x in open(filename, 'r').readline().split(',')] #convert input into an list of integers
 
 
 def solve_1(input):
