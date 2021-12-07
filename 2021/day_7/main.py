@@ -17,7 +17,7 @@ def solve_1(input):
     return least_fuel
 
 def solve_2(input, round):
-    #Get the right value from the mean but have to either round up or down. No clue how to check which one is the right way to go so let's just do both.
+    #Get the right value from the mean but have to either round up or down depending on inputs. No clue how to check which one is the right way to go so let's just do both.
     if round == 'floor':
         input_mean = floor(mean(input))
     else:
@@ -28,7 +28,6 @@ def solve_2(input, round):
         for position in input:
             steps = abs(position - input_mean)
             fuel_consumed += steps*(steps+1)/2 #sum of n terms
-        #Update least consumed fuel as long as it is not comparing against itself.
     return int(fuel_consumed)
 
 print('Solution 1:', solve_1(input))
