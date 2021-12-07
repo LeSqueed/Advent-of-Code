@@ -27,7 +27,7 @@ def solve_2(input, round):
         fuel_consumed = 0
         for position in input:
             steps = abs(position - input_mean)
-            fuel_consumed += steps*(steps+1)/2
+            fuel_consumed += steps*(steps+1)/2 #sum of n terms
         #Update least consumed fuel as long as it is not comparing against itself.
     return int(fuel_consumed)
 
