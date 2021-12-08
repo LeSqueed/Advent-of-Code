@@ -43,13 +43,14 @@ def index(data):
     
     #Sort list by length
     digits_list = sorted(digits_list, key=len)
-    #Pass the numbers we know for sure into the find number function to add it to our index.
+    #We can't just pass through the data cause we need information from certain numbers first to find out what the others are.
     find_number(digits_list[0])
     find_number(digits_list[1])
     find_number(digits_list[2])
     find_number(digits_list[9])
+    
+    #Reverse our list so we get the numbers with length of 6 first, we need these to find out what the numbers with length of 5 are.
     digits_list.reverse()
-    #Reverse our list so we get the numbers with length of 6 first.
     for digit in digits_list:
         digit = ''.join(sorted(digit))
         if len(digit) == 6:
@@ -80,7 +81,9 @@ def solve_2(input):
         result = '' #store total of all numbers in here
         for digit in data:
             digit = ''.join(sorted(digit))
+            #convert to string so we can add each number at the end.
             result += str(values.index(digit))
+        #Go back to int when storing it in our list for the sum.
         outputs.append(int(result))
     return sum(outputs)
 
