@@ -1,6 +1,4 @@
-from types import DynamicClassAttribute
 import numpy as np
-
 
 filename = 'input.txt'
 input = [line.rstrip() for line in open(filename)] 
