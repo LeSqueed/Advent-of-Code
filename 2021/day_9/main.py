@@ -1,6 +1,6 @@
 import numpy as np
 
-filename = 'input.txt'
+filename = 'input_sample.txt'
 input = [line.rstrip() for line in open(filename)] 
 
 #Find low points. Values that are the lowest value compared to their neighbours in a straight line.
@@ -120,6 +120,7 @@ def find_basins(map, index):
             #Remove current item from our i.
             i.pop(0)
         basin_sizes.append(map_basins.sum())
+        print(map_basins)
     #Sort the list by largest number so the largest 3 are always the ones at the front.
     basin_sizes.sort(reverse=True)
 
