@@ -1,5 +1,4 @@
 import numpy as np
-from scipy.ndimage import rotate
 
 filename = 'input.txt'
 input = [line.rstrip() for line in open(filename)] 
@@ -26,9 +25,6 @@ for x, y in dots:
     if y > C:
         C = y
 
-#print(instructions)
-
-#Create a version of the manual page. 0 representing empty space. For it to be an unequal number long and wide for easier "folding"
 R = R+1
 C = C+2
 
@@ -69,5 +65,3 @@ def solve(instructions, page, code = False):
 
 print('Solve 1:', solve(instructions, man_page, False))
 solve(instructions, man_page, True)
-
-#squid_map[left:right, bottom:top] = np.where(squid_map[left:right, bottom:top] > 0, squid_map[left:right, bottom:top]+1, squid_map[left:right, bottom:top])
